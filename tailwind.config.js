@@ -1,10 +1,14 @@
 /** @type {import('tailwindcss').Config} */
-export default {
+module.exports = {
+  // prefix: "jobflow-",
   content: [
-    "./src/**/*.{js,ts,jsx,tsx}", // Ensure all src files are scanned
+    "./src/**/*.{js,ts,jsx,tsx}",  // ✅ Scan all src files
+    // "./src/contents/**/*.{js,ts,jsx,tsx}", // ✅ Include content scripts
+    // "./src/popup/components/**/*.{js,ts,jsx,tsx}", // ✅ Include popup scripts
+    // "./src/styles/**/*.css"  // ✅ Include CSS files
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-}
+};
