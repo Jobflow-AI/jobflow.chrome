@@ -1,18 +1,13 @@
 import { useState } from "react"
-
-import "./style.css"
+import "./styles/global.css";
 
 function IndexNewtab() {
   const [data, setData] = useState("")
 
   return (
     <div
-      className="new-tab"
-      style={{
-        padding: 16,
-        display: "flex",
-        flexDirection: "column"
-      }}>
+      className="bg-black text-white w-full h-screen"
+      >
       <h1>
         Welcome to your <a href="https://www.plasmo.com">Plasmo</a> Extension!
       </h1>
