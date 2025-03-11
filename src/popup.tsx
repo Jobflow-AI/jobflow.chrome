@@ -1,24 +1,32 @@
-import { useState } from "react"
-import "./styles/global.css"
+import { useEffect, useState } from "react"
+import "~/styles/global.css";
+import LoginButton from "~popup/components/loginButton";
+
+import PopupBox from "~popup/components/popupUI"
 
 function IndexPopup() {
   const [data, setData] = useState("")
 
+  const [token, setToken] = useState('')
+  useEffect(() => {
+    (async() => {
+      const jwt_token = "abc"
+      setToken(jwt_token)
+    })()
+  })
   return (
-    <div
-      className="bg-red-300 text-white"
-      style={{
-        display: "flex",
-        width: 300,
-        flexDirection: "column",
-        padding: 16
-      }}>
-      <h1>
-        Welcome to your <a href="https://www.plasmo.com">Plasmo</a> Extension!
-      </h1>
+    token ? <PopupBox /> : <LoginButton/>
+  );
 
-    </div>
-  )
+  // return (
+  //   <div className="bg-blue-500 text-sm text-white p-4 w-96">
+  //     <h1>Popup</h1>
+  //     <PopupBox />
+  //     <div>
+  //       Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laudantium iure repellat, ea in, explicabo doloribus exercitationem enim, porro libero iusto asperiores ut! Nostrum, ipsa.
+  //     </div>
+  //   </div>
+  // )
 }
 
 export default IndexPopup
